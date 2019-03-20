@@ -6,7 +6,7 @@ const ImageLinkForm = ({ onInputChange, onPictureSubmit }) => {
         <div>
         <p className='f3'>
             {
-                'place image links here put dots on their faces'
+                'detect the space around a face'
             }
         </p>
         <div className ='center'>
