@@ -40,7 +40,6 @@ class App extends Component {
     }})
   }
 
-// using clarifai api to detect face location and return box around  face to render a box 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
@@ -64,7 +63,7 @@ class App extends Component {
 
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://git.heroku.com/aqueous-mesa-72756.git/imageurl', {
+    fetch('https://aqueous-mesa-72756.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -74,7 +73,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://git.heroku.com/aqueous-mesa-72756.git/image', {
+          fetch('https://aqueous-mesa-72756.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -83,7 +82,7 @@ class App extends Component {
           })
             .then(response => response.json())
             .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
+              this.setState(Object.assign(this.state.user, {entries: count}))
             })
             .catch(console.log)
             //err handling ( so err's dont happen without us knowing)
