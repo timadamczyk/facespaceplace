@@ -1,6 +1,5 @@
 import React from 'react';
 import Tilt from 'react-tilt';
-import BaldisariHead from './BaldisariHead.png';
 import dot from './dot.png'
 import './Logo.css';
 
