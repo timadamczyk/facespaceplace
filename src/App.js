@@ -107,6 +107,7 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, box } = this.state; 
     return (
       <div className="App">
+      
       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/> 
     
     { route === 'home' 
