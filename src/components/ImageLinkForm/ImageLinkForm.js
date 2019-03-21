@@ -6,7 +6,7 @@ const ImageLinkForm = ({ onInputChange, onPictureSubmit }) => {
         <div>
         <p className='f3'>
             {
-                'detect the space around a face'
+                'Input and image below to detect the space around a face'
             }
         </p>
         <div className ='center'>
