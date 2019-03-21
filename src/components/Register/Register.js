@@ -21,7 +21,7 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('https://aqueous-mesa-72756.herokuapp.com//register',{
+    fetch('https://aqueous-mesa-72756.herokuapp.com/register',{
       method: 'post',
       headers: {'Content-Type' : 'application/json'}, 
       body: JSON.stringify({ 
@@ -36,7 +36,7 @@ class Register extends React.Component {
         this.props.loadUser(user)
         this.props.onRouteChange('home');
       }
-    })
+    }).catch(err)
   }
  
 render(){
