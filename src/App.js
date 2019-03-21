@@ -36,7 +36,6 @@ class App extends Component {
         email: data.email,
         entires: data.entries, 
         joined: data.joined
-
     }})
   }
 
@@ -90,7 +89,8 @@ class App extends Component {
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
-      .catch(err => console.log(err));
+      .catch(console.log)
+     // .catch(err => console.log(err));
   }
 
   onRouteChange = (route) => {
@@ -110,8 +110,11 @@ class App extends Component {
       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/> 
     
     { route === 'home' 
-      ?<div> <Logo />
-      <Rank name={this.state.user.name} entries={this.state.user.entries}/>
+      ? <div> 
+      <Logo />
+      <Rank 
+          name={this.state.user.name} 
+          entries={this.state.user.entries}/>
       <ImageLinkForm 
           onInputChange={this.onInputChange} 
           onPictureSubmit={this.onPictureSubmit}
