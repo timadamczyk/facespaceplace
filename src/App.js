@@ -44,6 +44,7 @@ class App extends Component {
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
+    
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
@@ -103,7 +104,7 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, box } = this.state; 
+   const { isSignedIn, imageUrl, route, box } = this.state;  
     return (
       <div className="App">
       
@@ -125,7 +126,7 @@ class App extends Component {
           
       </div> 
       : 
-      (this.state.route === 'signin'
+      (route === 'signin'
       ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
       : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> 
       )
